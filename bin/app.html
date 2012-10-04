@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<body>
+
+<body>
+<script> 
+ 
+var resourceHTMLString = "<ul id='resource'>";
+           if (1 > 0) 
+           {
+               for (var i = 0; i < 1; i++) {
+                 
+                 resourceHTMLString += "<li id=\"resource\"><a id=\"resource\" href=\"javascript:void(0)\;\" onclick=\"openpopupwin('http://www.google.com')\">" + 'title' + '</a>';
+ 
+               }
+		// Or more popup window
+ 
+		resourceHTMLString += "<li id=\"resource\"><a id=\"resource\" href=\"javascript:void(0)\;\" onclick=\"window.open('http://www.google.com','othernewpopupwindow')\">" + 'new popup' + '</a>';
+ 
+		// ignore user preferences about tabs in ie8
+ 
+		resourceHTMLString += "<li id=\"resource\"><a id=\"resource\" href=\"javascript:void(0)\;\" onclick=\"notabsforyou('http://www.google.com')\">" + 'Open this link first' + '</a>';
+ 
+		// or if you dont want to bother getting the current popup windows name
+ 
+ 
+resourceHTMLString += "<li id=\"resource\"><a id=\"resource\" href=\"javascript:void(0)\;\" onclick=\"javascript:window.location='http://www.google.com'; \">" + 're-use this popup' + '</a>';
+
+		// or I want to redirect yet another link to the same popup 
+resourceHTMLString += "<li id=\"resource\"><a id=\"resource\" href=\"javascript:void(0)\;\" onclick=\"notabsforyou('http://www.google.com')\">" + 'Then open this link' + '</a>';
+ 
+	
+                resourceHTMLString += "<ul>";
+}
+function openpopupwin(url)
+{
+   
+    var w = window.open(url, "popupwindow",
+       'width=500,height=500,toolbar=yes, location=yes, status=yes,menubar=no,scrollbars=yes,resizable=yes');
+    return (!w);
+    //return false;
+}
+ 
+function notabsforyou(url) {
+    
+     var w = window.open(url, "whatever",'statusbar=0,toolbar=0');
+ return false;
+}
+ 
+document.write(resourceHTMLString); 
+</script>
+ 
+</body>
+</html>
